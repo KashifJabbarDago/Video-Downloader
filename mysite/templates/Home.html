@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <style>
+    .nav_cont{
+        margin:0dp;
+        padding-left:  var(--bs-gutter-x,.0rem);;
+        padding-right: var(--bs-gutter-x,.0rem);
+    }
+    .downloader_shower{
+           padding-left: calc(var(--bs-gutter-x) * .0);
+    }
+  </style>
+  <body>
+    {% load static %}
+    <div class="container-fluid nav_cont">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="#">| KDownloads</a>
+          </div>
+        </nav>
+      </div>
+      <form method="post" action="youtubeDownload">
+        {% csrf_token %}
+      <div class="container mt-5 text-center ">
+        <div class="row d-flex  align-items-center justify-content-center">
+          <h1 class="text-md-3 text-sm-4 mb-3">Download your |</h1>
+          <div class="col-xl-8 col-md-6 col-sm-6 ">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="text" aria-label="Text input with dropdown button" placeholder="URL">
+                <button class="btn btn-dark dropdown-toggle"name="url" type="button" data-bs-toggle="dropdown" aria-expanded="false">Video Type</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li ><a class="dropdown-item" href="youtubeDownload" id="youtube" name="youtube">Youtube</a></li>
+                  <li><a class="dropdown-item" href="facebookDownload" name="facebook">Facebook</a></li>
+                  <li><a class="dropdown-item" href="instagramDownload" name="instagram">Instagram</a></li>
+              </div>
+      </div>
+        </div>
+      </div>
+    </form>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+  </body>
+</html>
